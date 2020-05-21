@@ -43,19 +43,19 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('RA Availability example'),
         ),
         body: Column(
           children: <Widget>[
             Center(
-              child: Text('Verifique se o dispositivo suporta RA clicando no botão abaixo'),
+              child: Text('Click at the button bellow to check if device support AR.'),
             ),
             FlatButton(
-              color: Colors.blue,
+              color: Colors.green,
               onPressed: (){
                 initPlatformState();
               },
-              child: Text("Verificar"),
+              child: Text("Check"),
             ),
             exibirResultado ?
             Text(
