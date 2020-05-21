@@ -9,7 +9,7 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+      return true;
     });
   });
 
@@ -17,7 +17,7 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await Raavailability.platformVersion, '42');
+  test('isSupported', () async {
+    expect(await Raavailability.isSupported, true);
   });
 }

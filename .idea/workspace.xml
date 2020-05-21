@@ -8,8 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="58563161-5c0b-40bc-82c9-c37b3b495075" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/raavailability/RaavailabilityPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/raavailability/RaavailabilityPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftRaavailabilityPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftRaavailabilityPlugin.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/raavailability_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/raavailability_test.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
