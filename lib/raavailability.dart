@@ -6,8 +6,8 @@ class Raavailability {
   static const MethodChannel _channel =
       const MethodChannel('raavailability');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  static Future<bool> get isSupported async {
+    final bool supported = await _channel.invokeMethod('isSupported');
+    return supported;
   }
 }

@@ -47,16 +47,13 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals("getPlatformVersion")) {
+    if (call.method.equals("isSupported")) {
       ArCoreApk.Availability availability = ArCoreApk.getInstance().checkAvailability(mContext);
-      String message = "";
-      if (availability.isTransient()) {
-        message = "transiente";
-      }
+      boolean supported = false;
       if (availability.isSupported()) {// indicator on the button.
-        message = "supported";
+        supported = true;
       }
-      result.success("Android " + android.os.Build.VERSION.RELEASE + message);
+      result.success(supported);
     } else {
       result.notImplemented();
     }
