@@ -51,7 +51,11 @@ class _MyAppState extends State<MyApp> {
             SizedBox(
               height: 24,
             ),
-            Text('MAKE SURE:', style: TextStyle(fontSize: 40, color: Colors.red, fontWeight: FontWeight.w800),),
+            Text(
+              'MAKE SURE:',
+              style: TextStyle(
+                  fontSize: 40, color: Colors.red, fontWeight: FontWeight.w800),
+            ),
             SizedBox(
               height: 24,
             ),
@@ -76,7 +80,10 @@ class _MyAppState extends State<MyApp> {
               child: Text(
                 'Click at the button bellow to check if device support AR.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w800),
+                style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w800),
               ),
             ),
             FlatButton(
