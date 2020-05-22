@@ -1,3 +1,2 @@
 ## 0.0.1
-
-* TODO: Describe initial release.
+Implementing the isSupported functionr for android.
