@@ -6,3 +6,5 @@ Changing plugin name, running flutter format and add a homepage url.
 Changing min sdk version from 14 to 16.
 ## 0.0.4
 Improoving Example file.
+## 0.0.5 
+Changing dependencies place.

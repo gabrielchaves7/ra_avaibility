@@ -30,7 +30,8 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-    dependencies {
-        implementation 'com.google.ar:core:1.17.0'
-    }
+}
+
+dependencies {
+    implementation 'com.google.ar:core:1.17.0'
 }
