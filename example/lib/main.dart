@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -47,18 +48,55 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
+            SizedBox(
+              height: 24,
+            ),
+            Text('MAKE SURE:', style: TextStyle(fontSize: 40, color: Colors.red, fontWeight: FontWeight.w800),),
+            SizedBox(
+              height: 24,
+            ),
             Center(
               child: Text(
-                  'Click at the button bellow to check if device support AR.'),
+                'TO ADD ANDROIDMANIFEST.xml\n <meta-data android:name="com.google.ar.core" android:value="required" />',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w800),
+              ),
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Text(
+              "Otherwise the plugin dont work for android",
+              style: TextStyle(fontWeight: FontWeight.w800),
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Center(
+              child: Text(
+                'Click at the button bellow to check if device support AR.',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.w800),
+              ),
             ),
             FlatButton(
-              color: Colors.green,
+              color: Colors.black,
               onPressed: () {
                 initPlatformState();
               },
-              child: Text("Check"),
+              child: Text(
+                "Check",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-            exibirResultado ? Text(_supported.toString()) : Container(),
+            exibirResultado
+                ? Text(
+                    _supported.toString(),
+                    style: TextStyle(
+                      fontSize: 32,
+                    ),
+                  )
+                : Container(),
           ],
         ),
       ),

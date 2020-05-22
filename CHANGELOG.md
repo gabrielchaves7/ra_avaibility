@@ -4,3 +4,5 @@ Implementing the isSupported functionr for android.
 Changing plugin name, running flutter format and add a homepage url.
 ## 0.0.3
 Changing min sdk version from 14 to 16.
+## 0.0.4
+Improoving Example file.
