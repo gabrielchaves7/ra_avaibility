@@ -48,19 +48,17 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Center(
-              child: Text('Click at the button bellow to check if device support AR.'),
+              child: Text(
+                  'Click at the button bellow to check if device support AR.'),
             ),
             FlatButton(
               color: Colors.green,
-              onPressed: (){
+              onPressed: () {
                 initPlatformState();
               },
               child: Text("Check"),
             ),
-            exibirResultado ?
-            Text(
-              _supported.toString()
-            ) : Container(),
+            exibirResultado ? Text(_supported.toString()) : Container(),
           ],
         ),
       ),
