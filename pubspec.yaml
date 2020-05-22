@@ -1,8 +1,7 @@
 name: raavailability
-description: A new Flutter plugin.
+description: Plugin to check if AR is available on android and ios devices.
 version: 0.0.1
-author:
-homepage:
+repository: https://github.com/gabrielchaves7/ra_avaibility
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
