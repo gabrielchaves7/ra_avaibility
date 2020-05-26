@@ -1,13 +1,18 @@
 package com.example.raavailability;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.google.ar.core.ArCoreApk;
+import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -15,9 +20,11 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** RaavailabilityPlugin */
-public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler {
+public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   private MethodChannel channel;
   private Context mContext;
+  private Activity activity;
+  private boolean mUserRequestedInstall = true;
 
 
   @Override
@@ -48,13 +55,45 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(null);
   }
 
-  private String _isSupported(){
-    ArCoreApk.Availability availability = ArCoreApk.getInstance().checkAvailability(mContext);
-    String result = "Is supported" + availability.isSupported();
-    result += "//Is unsupported" + availability.isUnsupported();
-    result += "//Is unknown" + availability.isUnknown();
-    result += "//Is transient" + availability.isTransient();
+  private boolean _isSupported(){
+    ArCoreApk _arcore = ArCoreApk.getInstance();
+    ArCoreApk.Availability availability = _arcore.checkAvailability(mContext);
+    try {
+      switch (ArCoreApk.getInstance().requestInstall(activity, mUserRequestedInstall)) {
+        case INSTALLED:
+          return true;
+        case INSTALL_REQUESTED:
+          mUserRequestedInstall = false;
+          return false;
+      }
+    } catch (UnavailableUserDeclinedInstallationException e) {
+      Log.e("User decline install", "The idiot user declined the install.");
+      return false;
+    } catch (Exception e) {  // Current catch statements.
+      Log.e("Unknown exception", e.getMessage());
+      return false;
+    }
 
-    return result;
+    return false;
+  }
+
+  @Override
+  public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
+    this.activity = activityPluginBinding.getActivity();
+  }
+
+  @Override
+  public void onDetachedFromActivityForConfigChanges() {
+
+  }
+
+  @Override
+  public void onReattachedToActivityForConfigChanges(ActivityPluginBinding activityPluginBinding) {
+
+  }
+
+  @Override
+  public void onDetachedFromActivity() {
+
   }
 }

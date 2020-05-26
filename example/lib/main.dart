@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _supported = "";
+  bool _supported;
   bool exibirResultado = false;
 
   @override
@@ -24,11 +24,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    String supported;
+    bool supported;
     try {
       supported = await Raavailability.isSupported;
     } on PlatformException {
-      supported = "";
+      supported = false;
     }
 
     if (!mounted) return;
@@ -48,31 +48,6 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              'MAKE SURE:',
-              style: TextStyle(
-                  fontSize: 40, color: Colors.red, fontWeight: FontWeight.w800),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Center(
-              child: Text(
-                'TO ADD ANDROIDMANIFEST.xml\n <meta-data android:name="com.google.ar.core" android:value="required" />',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w800),
-              ),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              "Otherwise the plugin dont work for android",
-              style: TextStyle(fontWeight: FontWeight.w800),
-            ),
             SizedBox(
               height: 24,
             ),

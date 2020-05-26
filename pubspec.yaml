@@ -1,6 +1,6 @@
 name: raavailability
 description: Plugin to check if AR is available on android and ios devices.
-version: 0.0.6
+version: 0.1.0
 repository: https://github.com/gabrielchaves7/ra_avaibility
 homepage: https://github.com/gabrielchaves7/ra_avaibility
 

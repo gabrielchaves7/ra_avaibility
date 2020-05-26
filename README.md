@@ -1,9 +1,12 @@
 # raavailability
-
 A flutter plugin that check if AR is available for Android and IOS. To check for android we use
 com.google.ar.core, for IOS isnt implemented yet.
 
 ## Getting Started
-- You need to add <meta-data android:name="com.google.ar.core" android:value="required" /> to AndroidManifest.xml. Otherwise the plugin wont work.
-Take care when you do this, because some plugins can do the same and conflict with your manifest. If that happens, you just need to secure that is the same value for all.
+If device supported RA and already have Google Play Services for RA installed, the method Raavailability.isSupported returns true,
+if Google Play Services for RA isn't installed yet, we ask the user to install, open the Google 
+Play Services for RA page at play store and Raavailability.isSupported  returns false.  
+After that, if the device is able to install and the user install, the Raavailability.isSupported 
+will return true. If the user dont install, the Raavailability.isSupported will keep returning false.
+
 See the example file.
