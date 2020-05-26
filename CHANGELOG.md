@@ -8,3 +8,5 @@ Changing min sdk version from 14 to 16.
 Improoving Example file.
 ## 0.0.5 
 Changing dependencies place.
+## 0.0.6
+Changing google ar core version.

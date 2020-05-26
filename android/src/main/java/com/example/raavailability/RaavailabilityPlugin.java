@@ -48,14 +48,13 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(null);
   }
 
-  private boolean _isSupported(){
+  private String _isSupported(){
     ArCoreApk.Availability availability = ArCoreApk.getInstance().checkAvailability(mContext);
-    boolean supported = false;
+    String result = "Is supported" + availability.isSupported();
+    result += "//Is unsupported" + availability.isUnsupported();
+    result += "//Is unknown" + availability.isUnknown();
+    result += "//Is transient" + availability.isTransient();
 
-    if (availability.isSupported()) {// indicator on the button.
-      supported = true;
-    }
-
-    return supported;
+    return result;
   }
 }

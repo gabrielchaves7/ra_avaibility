@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _supported = false;
+  String _supported = "";
   bool exibirResultado = false;
 
   @override
@@ -24,11 +24,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    bool supported;
+    String supported;
     try {
       supported = await Raavailability.isSupported;
     } on PlatformException {
-      supported = false;
+      supported = "";
     }
 
     if (!mounted) return;
