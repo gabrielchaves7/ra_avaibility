@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import ARKit
 
 public class SwiftRaavailabilityPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -9,6 +10,10 @@ public class SwiftRaavailabilityPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result(true)
+    if #available(iOS 11, *) {
+      result(ARConfiguration.isSupported)
+    } else {
+      result(false)
+    }
   }
 }

@@ -12,3 +12,5 @@ Changing dependencies place.
 Changing google ar core version.
 ## 0.1.0
 Using requestInstall instead of isSupported
+## 0.1.1
+Implementing IOS check for ARKit.
