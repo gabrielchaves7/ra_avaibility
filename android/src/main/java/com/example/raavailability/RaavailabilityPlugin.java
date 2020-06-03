@@ -63,7 +63,6 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler, A
         case INSTALLED:
           return true;
         case INSTALL_REQUESTED:
-          mUserRequestedInstall = false;
           return false;
       }
     } catch (UnavailableUserDeclinedInstallationException e) {

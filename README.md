@@ -11,6 +11,5 @@ After that, if the device is able to install and the user install, the Raavailab
 will return true. If the user dont install, the Raavailability.isSupported will keep returning false.
 ### IOS
 For Ios if device have IOS 11 or higher we check ARKit.isSupported, otherwise will return false.
-
-##Example
+## Example
 See the example file.

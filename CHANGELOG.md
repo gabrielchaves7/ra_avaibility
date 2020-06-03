@@ -14,3 +14,5 @@ Changing google ar core version.
 Using requestInstall instead of isSupported
 ## 0.1.1
 Implementing IOS check for ARKit.
+## 0.1.2
+Request install now is always true for android.
