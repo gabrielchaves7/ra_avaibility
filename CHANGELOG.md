@@ -18,3 +18,5 @@ Implementing IOS check for ARKit.
 Request install now is always true for android.
 ## 0.1.3
 Removing ununsed variables and updating readme.
+## 0.1.4
+Updating readme.
