@@ -3,6 +3,7 @@ A flutter plugin that check if AR is available for Android and IOS. To check for
 com.google.ar.core and to check for IOS we use ARKit.
 
 ## Getting Started
+You have to put in your AndroidManifest.xml inside <application> <meta-data android:name="com.google.ar.core" android:value="required" /> or <meta-data android:name="com.google.ar.core" android:value="optional" />
 ### Android
 If device supported RA and already have Google Play Services for RA installed, the method Raavailability.isSupported returns true,
 if Google Play Services for RA isn't installed yet, we ask the user to install, open the Google 

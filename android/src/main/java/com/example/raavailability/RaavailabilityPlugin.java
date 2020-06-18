@@ -57,16 +57,15 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler, A
 
   private boolean _isSupported(){
     ArCoreApk _arcore = ArCoreApk.getInstance();
-    ArCoreApk.Availability availability = _arcore.checkAvailability(mContext);
     try {
-      switch (ArCoreApk.getInstance().requestInstall(activity, mUserRequestedInstall)) {
+      switch (_arcore.requestInstall(activity, mUserRequestedInstall)) {
         case INSTALLED:
           return true;
         case INSTALL_REQUESTED:
           return false;
       }
     } catch (UnavailableUserDeclinedInstallationException e) {
-      Log.e("User decline install", "The idiot user declined the install.");
+      Log.e("User decline install", "The user declined the install.");
       return false;
     } catch (Exception e) {  // Current catch statements.
       Log.e("Unknown exception", e.getMessage());

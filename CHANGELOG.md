@@ -16,3 +16,5 @@ Using requestInstall instead of isSupported
 Implementing IOS check for ARKit.
 ## 0.1.2
 Request install now is always true for android.
+## 0.1.3
+Removing ununsed variables and updating readme.
