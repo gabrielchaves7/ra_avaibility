@@ -22,3 +22,5 @@ Removing unused variables and updating readme.
 Updating readme.
 ## 0.1.5
 Correcting a error that make the google play store open forever after user close it.
+## 0.1.6
+Using another implementation fo arcoreApk.request install.
