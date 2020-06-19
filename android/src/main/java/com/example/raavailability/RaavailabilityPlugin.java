@@ -57,6 +57,7 @@ public class RaavailabilityPlugin implements FlutterPlugin, MethodCallHandler, A
 
   private boolean _isSupported(){
     ArCoreApk _arcore = ArCoreApk.getInstance();
+    ArCoreApk.Availability availability = _arcore.checkAvailability(mContext);
     try {
       switch (_arcore.requestInstall(activity, mUserRequestedInstall)) {
         case INSTALLED:

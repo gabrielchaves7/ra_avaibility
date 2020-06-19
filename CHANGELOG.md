@@ -17,6 +17,8 @@ Implementing IOS check for ARKit.
 ## 0.1.2
 Request install now is always true for android.
 ## 0.1.3
-Removing ununsed variables and updating readme.
+Removing unused variables and updating readme.
 ## 0.1.4
 Updating readme.
+## 0.1.5
+Correcting a error that make the google play store open forever after user close it.
